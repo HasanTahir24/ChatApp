@@ -29,8 +29,11 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func CreateAccount(_ sender: Any) {
-        let currentSerial = ref?.value(forKey: "Current_Serial") as! Int
-        ref?.child("Current_Serial").setValue(["Current_Serial":currentSerial+1])
+        let currentSerial = ref?.observe(.value, with: { (sn) in
+            print(sn)
+        })
+//        print(currentSerial)
+//        ref?.child("Current_Serial").setValue(["Current_Serial":currentSerial])
     }
     
 
