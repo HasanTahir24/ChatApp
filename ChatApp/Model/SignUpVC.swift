@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CountryPickerView
 class SignUpVC: UIViewController {
   
     @IBOutlet weak var usernameTF: UITextField!
@@ -20,8 +21,7 @@ class SignUpVC: UIViewController {
     var currentSerial:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-     ref = Database.database().reference()
-        // Do any additional setup after loading the view.
+   //  customizePhoneTF()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,13 +30,18 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func CreateAccount(_ sender: Any) {
-    
+//        ref = Database.database().reference()
+//        ref?.child(contactnumberTF.text!).setValue(["Username":usernameTF.text,"Password":passwordTF.text!])
         
 //        print(currentSerial)
 //        ref?.child("Current_Serial").setValue(["Current_Serial":currentSerial])
     }
     
-
+    func customizePhoneTF(){
+        let cpv = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: contactnumberTF.frame.height - 5))
+        contactnumberTF.leftView = cpv
+        contactnumberTF.leftViewMode = .always
+    }
     /*
     // MARK: - Navigation
 

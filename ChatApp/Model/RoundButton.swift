@@ -31,7 +31,7 @@ import UIKit
     
     @IBInspectable var cornerRadius: CGFloat = 15 {
         didSet {
-            refreshCorners(value: cornerRadius)
+            refreshCorner(value: cornerRadius)
             }
         }
     

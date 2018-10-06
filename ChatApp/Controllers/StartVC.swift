@@ -7,14 +7,16 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
 class StartVC: UIViewController {
 
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
-    
+    var ref : DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
+      Auth.auth().signInAnonymously(completion: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -26,7 +28,8 @@ class StartVC: UIViewController {
     
 
     @IBAction func Login(_ sender: Any) {
-        
+        Auth.auth().signInAnonymously(completion: nil)
+
     }
     /*
     // MARK: - Navigation
